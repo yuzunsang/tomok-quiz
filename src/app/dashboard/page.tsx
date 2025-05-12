@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
-import Navbar from "../_components/Navbar";
+import Navbar from "../../components/Navbar";
 
 export default function Dashboard() {
   const { data: session, status } = useSession();

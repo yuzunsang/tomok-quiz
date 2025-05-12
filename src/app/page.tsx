@@ -1,14 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { useSession } from "next-auth/react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import Navbar from "./_components/Navbar";
+import Navbar from "../components/Navbar";
+import Card from "@/components/Cards";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -20,7 +19,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   const { data: session } = useSession();
-  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -42,22 +40,7 @@ export default function Home() {
               </Typography>
             </Item>
           )}
-
-          <Item elevation={3} sx={{ p: 3, mt: 3 }}>
-            <Typography variant="h5" gutterBottom>
-              카운터: {count}
-            </Typography>
-            <Button
-              variant="contained"
-              onClick={() => setCount(count + 1)}
-              sx={{ mr: 2 }}
-            >
-              증가
-            </Button>
-            <Button variant="outlined" onClick={() => setCount(0)}>
-              리셋
-            </Button>
-          </Item>
+          <Card />
         </Box>
       </Container>
     </>

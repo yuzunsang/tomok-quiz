@@ -1,7 +1,7 @@
 "use client";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { NextAppDirEmotionCacheProvider } from "./EmotionCache";
+import { NextAppDirEmotionCacheProvider } from "../app/EmotionCache";
 
 // 테마 생성
 const theme = createTheme({

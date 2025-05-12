@@ -6,7 +6,10 @@ export async function middleware(request: NextRequest) {
   const session = await auth();
 
   // 보호된 라우트에 대한 접근 확인
-  if (request.nextUrl.pathname.startsWith("/dashboard")) {
+  if (
+    request.nextUrl.pathname.startsWith("/dashboard") ||
+    request.nextUrl.pathname.startsWith("/cards")
+  ) {
     if (!session) {
       // 로그인되지 않은 사용자는 로그인 페이지로 리디렉션
       return NextResponse.redirect(new URL("/login", request.url));
@@ -17,5 +20,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ["/dashboard/:path*", "/cards/:path*"],
 };

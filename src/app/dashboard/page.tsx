@@ -3,14 +3,16 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Stack from "@mui/material/Stack";
-import Navbar from "../../components/Navbar";
+import {
+  Container,
+  Typography,
+  Box,
+  Paper,
+  Card,
+  CardContent,
+  Stack,
+} from "@mui/material";
+import Navbar from "@/components/Navbar";
 
 export default function Dashboard() {
   const { data: session, status } = useSession();
